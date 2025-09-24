@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:padding="@dimen/padding15">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/tvTitle"
+        style="@style/textTertiary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin20"
+        android:text="@string/task_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/titleLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin5"
+        app:boxStrokeColor="@color/primary"
+        app:hintEnabled="false"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <!-- Description -->
+    <TextView
+        android:id="@+id/tvDescription"
+        style="@style/textTertiary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin20"
+        android:text="@string/task_description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleLayout" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/descriptionLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin5"
+        app:boxStrokeColor="@color/primary"
+        app:hintEnabled="false"
+        app:layout_constraintTop_toBottomOf="@id/tvDescription">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etDescription"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height150"
+            android:gravity="top" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <!-- Date -->
+    <TextView
+        android:id="@+id/tvDate"
+        style="@style/textTertiary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin20"
+        android:text="@string/task_dueDate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/descriptionLayout" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/dateLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin5"
+        app:boxStrokeColor="@color/primary"
+        app:endIconDrawable="@drawable/icon_calendar"
+        app:endIconMode="custom"
+        app:hintEnabled="false"
+        app:layout_constraintTop_toBottomOf="@id/tvDate">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="false" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <!-- Priority Dropdown -->
+    <TextView
+        android:id="@+id/tvPriority"
+        style="@style/textTertiary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin20"
+        android:text="@string/task_priority"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dateLayout" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/priorityDropdownLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin5"
+        app:boxStrokeColor="@color/primary"
+        app:hintEnabled="false"
+        app:layout_constraintTop_toBottomOf="@id/tvPriority">
+
+        <AutoCompleteTextView
+            android:id="@+id/spPriority"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:inputType="none" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Status -->
+    <TextView
+        android:id="@+id/tvStatus"
+        style="@style/textTertiary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin20"
+        android:text="@string/task_status"
+        app:layout_constraintBaseline_toBaselineOf="@+id/switchStatus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/priorityDropdownLayout" />
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/switchStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/priorityDropdownLayout" />
+
+
+    <!-- Buttons -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSave"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin25"
+        android:layout_marginEnd="@dimen/margin10"
+        android:background="@drawable/button_positive_view_bg"
+        android:text="@string/task_save"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toStartOf="@+id/btnDelete"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/switchStatus" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnDelete"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin10"
+        android:layout_marginTop="@dimen/margin25"
+        android:background="@drawable/button_negative_view_bg"
+        android:text="@string/task_delete"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnSave"
+        app:layout_constraintTop_toBottomOf="@id/switchStatus" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

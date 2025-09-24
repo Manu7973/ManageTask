@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/padding10">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/tvTitle"
+        style="@style/textSecondary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:padding="@dimen/padding2"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tvPriority"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0" />
+
+    <!-- Priority Badge -->
+    <TextView
+        android:id="@+id/tvPriority"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_priority_high"
+        android:gravity="center"
+        android:paddingStart="@dimen/padding10"
+        android:paddingEnd="@dimen/padding10"
+        android:paddingTop="@dimen/padding5"
+        android:paddingBottom="@dimen/padding5"
+        android:text="HIGH"
+        style="@style/textTertiaryLight"
+        app:layout_constraintStart_toEndOf="@id/tvTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvTitle" />
+
+    <!-- Description -->
+    <TextView
+        android:id="@+id/tvDescription"
+        style="@style/textTertiary"
+        android:layout_width="0dp"
+        android:padding="@dimen/padding2"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text=""
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tvDate"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintHorizontal_bias="0" />
+
+    <!-- Date Badge -->
+    <TextView
+        android:id="@+id/tvDate"
+        style="@style/textTertiary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text=""
+        android:padding="@dimen/padding2"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        app:layout_constraintStart_toEndOf="@id/tvDescription"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvDescription" />
+
+    <!-- Due Date -->
+    <TextView
+        android:id="@+id/tvDueDate"
+        style="@style/textTertiary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:padding="@dimen/padding2"
+        android:ellipsize="end"
+        android:layout_marginBottom="@dimen/margin10"
+        android:maxLines="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDescription"
+        app:layout_constraintBottom_toTopOf="@id/dividerView" />
+
+    <!-- Divider -->
+    <View
+        android:id="@+id/dividerView"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/thinGrey"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvDueDate"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

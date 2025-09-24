@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">ManageTask</string>
+    <string name="no_task_added">No Task Added Yet!</string>
+    <string name="add_task">Add Task</string>
+    <string name="search_task">Search tasks</string>
+    <string name="task_title">Title</string>
+    <string name="task_description">Description</string>
+    <string name="task_dueDate">Due Date</string>
+    <string name="task_priority">Priority</string>
+    <string name="task_status">Completed</string>
+    <string name="task_save">Save</string>
+    <string name="filter">Filter</string>
+    <string name="list">List</string>
+    <string name="grid">Grid</string>
+    <string name="task_delete">Delete</string>
+    <string name="add_task_dialog">AddTaskDialog</string>
+    <string name="edit_task_dialog">EditTaskDialog</string>
+</resources>
