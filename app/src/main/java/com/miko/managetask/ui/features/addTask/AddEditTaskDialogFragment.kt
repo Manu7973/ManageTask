@@ -139,6 +139,11 @@ class AddEditTaskDialogFragment(
 
     // Set switch color on check
     private fun setupSwitchColorOnCheck() {
+        binding.switchStatus.apply {
+            textOn = ""    // prevent NullPointerException
+            textOff = ""   // prevent NullPointerException
+        }
+
         val thumbColors = ColorStateList(
             arrayOf(
                 intArrayOf(android.R.attr.state_checked),    // ON
@@ -167,7 +172,6 @@ class AddEditTaskDialogFragment(
         binding.switchStatus.thumbTintList = thumbColors
         binding.switchStatus.trackTintList = trackColors
     }
-
 }
 
 
