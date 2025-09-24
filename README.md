@@ -28,5 +28,8 @@ View: XML layouts + RecyclerView adapters
 ViewModel: Exposes LiveData/Flow for observing changes
 This improves testability, maintainability, and scalability of the codebase.
 
+<img width="1080" height="2400" alt="1" src="https://github.com/user-attachments/assets/cf96c626-af67-4a1a-bd29-e0457ae29760" />
+
+
 👨‍💻 Author - 
 # Submitted by - Manthan Aggarwal
